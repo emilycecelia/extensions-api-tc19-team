@@ -16,6 +16,11 @@
     });
   });
 
+  function loadCommentsData() {
+    url = "https://sheets.googleapis.com/v4/spreadsheets/1ss0UqpLR7xAJa9DstkultD2VmHx35tHAPvG149KbarI/values/Sheet1!A1:B4?key=AIzaSyAWi9RHQrusdMsD_kQJQrdCiXL3UqgbfHc";
+
+  }
+
   function fetchFilters () {
     // While performing async task, show loading message to user.
     $('#loading').addClass('show');
@@ -46,6 +51,9 @@
       // remove the event listener when called.
       let unregisterHandlerFunction = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, filterChangedHandler);
       unregisterHandlerFunctions.push(unregisterHandlerFunction);
+
+      let unregisterHandlerFunction1 = worksheet.addEventListener(tableau.TableauEventType.MarkSelectionChanged, markSelectChangedHandler);
+      unregisterHandlerFunctions.push(unregisterHandlerFunction1);
     });
 
     // Now, we call every filter fetch promise, and wait for all the results
@@ -66,6 +74,20 @@
     // Just reconstruct the filters table whenever a filter changes.
     // This could be optimized to add/remove only the different filters.
     fetchFilters();
+  }
+
+  function getSelectedMarkData() {
+    tableau.extensions.dashboardContent.dashboard.worksheets[0].getSelectedMarksAsync().then((data) => {
+      console.log(data);
+      let state = data.data[0]._data[0][0]._value;
+      console.log(state);
+      document.getElementById("statebox").value = state;
+    });
+  }
+  // This is a handling function that is called anytime a mark selection is changed in Tableau.
+  function markSelectChangedHandler (markEvent) {
+    console.log("mark selected");
+    getSelectedMarkData();
   }
 
   // Constructs UI that displays all the dataSources in this dashboard
