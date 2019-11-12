@@ -16,9 +16,27 @@
     });
   });
 
-  function loadCommentsData() {
-    url = "https://sheets.googleapis.com/v4/spreadsheets/1ss0UqpLR7xAJa9DstkultD2VmHx35tHAPvG149KbarI/values/Sheet1!A1:B4?key=AIzaSyAWi9RHQrusdMsD_kQJQrdCiXL3UqgbfHc";
+  function loadCommentsData(state) {
+    var comments = '';
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/1ss0UqpLR7xAJa9DstkultD2VmHx35tHAPvG149KbarI/values/Sheet1!A1:B100?key=AIzaSyAWi9RHQrusdMsD_kQJQrdCiXL3UqgbfHc";
+    $.getJSON(url, function(data){
+      console.log(state);
+      data.values.forEach( function(row) {
+        console.log('row: '+row[0]);
+        console.log(state==row[0]);
+        if (row[0]==state) {
+          console.log('xx'+row[0]+row[1]+'xx')
+          comments = comments+ row[1]+'<br>';
+          console.log(comments);
+        }
+      });
+      console.log('final comments'+comments);
+      document.getElementById('comments').innerHTML=comments;
+     });
+  }
 
+  function addComment(state, comment) {
+    //code to come
   }
 
   function fetchFilters () {
@@ -82,6 +100,8 @@
       let state = data.data[0]._data[0][0]._value;
       console.log(state);
       document.getElementById("statebox").value = state;
+
+      loadCommentsData(state);
     });
   }
   // This is a handling function that is called anytime a mark selection is changed in Tableau.
