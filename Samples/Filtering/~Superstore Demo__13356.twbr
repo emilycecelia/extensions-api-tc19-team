@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
 <!-- build 20191.19.0213.2333                               -->
-<workbook source-build='2019.1.0 (20191.19.0213.2333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+<workbook source-build='2019.1.0 (20191.19.0213.2333)' source-platform='win' version='18.1' xml:base='https://onesource-bisbx.southernglazers.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
     <Extensions />
     <SheetIdentifierTracking />
@@ -10,7 +10,7 @@
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='Superstore_us' path='/workbooks' revision='1.2' />
+  <repository-location id='SuperstoreDemoExtension' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='datagrid.autoupdate.max.filesize' value='100000000000' />
     <preference name='ui.discoverpane.stagingWebContentSwitch' value='1' />
@@ -50,277 +50,11 @@
         <range granularity='0.001' max='0.25' min='0.0' />
       </column>
     </datasource>
-    <datasource caption='Sales Target Extract' inline='true' name='federated.0z0pi331stuxay1ce6y5f1yxvsw9' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='Sales Target' name='hyper.0b9ww9a086u1d41dqjy2d0vs8f1i'>
-            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Desktop 1/Sales Target.hyper' default-settings='yes' sslmode='' username='tableau_internal_user' />
-          </named-connection>
-        </named-connections>
-        <relation connection='hyper.0b9ww9a086u1d41dqjy2d0vs8f1i' name='Extract' table='[Extract].[Extract]' type='table' />
-        <metadata-records>
-          <metadata-record class='column'>
-            <remote-name>Category</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Category]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Category</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <approx-count>3</approx-count>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_RUS_S2' />
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Order Date</remote-name>
-            <remote-type>133</remote-type>
-            <local-name>[Order Date]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Order Date</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <approx-count>994</approx-count>
-            <contains-null>true</contains-null>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Sales Target</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Sales Target]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Sales Target</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <approx-count>805</approx-count>
-            <contains-null>true</contains-null>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Segment</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Segment]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Segment</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <approx-count>3</approx-count>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_RUS_S2' />
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
-        <calculation class='tableau' formula='1' />
-      </column>
-      <layout dim-ordering='alphabetic' dim-percentage='0.324468' measure-ordering='alphabetic' measure-percentage='0.293883' parameter-percentage='0.381649' show-structure='true' />
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-    </datasource>
-    <datasource caption='Sales Commission' inline='true' name='Sales Planning new' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='Sales Commission' name='Sales Planning newleaf'>
-            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Superstore/Sales Commission.hyper' default-settings='yes' sslmode='' username='tableau_internal_user' />
-          </named-connection>
-        </named-connections>
-        <relation connection='Sales Planning newleaf' name='Extract' table='[Extract].[Extract]' type='table' />
-        <calculations>
-          <calculation column='[Number of Records]' formula='1' />
-        </calculations>
-        <metadata-records>
-          <metadata-record class='column'>
-            <remote-name>Order Date</remote-name>
-            <remote-type>135</remote-type>
-            <local-name>[Order Date]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Order Date</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>datetime</local-type>
-            <aggregation>Year</aggregation>
-            <approx-count>1</approx-count>
-            <contains-null>true</contains-null>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Region</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Region]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Region</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <approx-count>3</approx-count>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Sales Person</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Sales Person]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Sales Person</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <approx-count>43</approx-count>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Sales</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[Sales]</local-name>
-            <parent-name>[Extract]</parent-name>
-            <remote-alias>Sales</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <approx-count>43</approx-count>
-            <contains-null>true</contains-null>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Achievement (estimated)' datatype='integer' default-format='C1033%' name='[Achievement (copy)]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[Sales]' scope-isolation='false' />
-      </column>
-      <column caption='Achieved Quota' datatype='string' name='[Achievement (variable) (copy)]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='if SUM([Achievement (copy)]) &gt;= [Parameters].[New Quota] then &quot;100% +&quot;&#13;&#10;elseif SUM([Achievement (copy)]) &gt;= 0.75 * [Parameters].[New Quota] then &quot;75-100%&quot;&#13;&#10;elseif SUM([Achievement (copy)]) &gt;= 0.5 * [Parameters].[New Quota] then &quot;50-75%&quot;&#13;&#10;else &quot;Below 50%&quot; end' />
-      </column>
-      <column datatype='integer' default-format='C1033%' name='[Base (Variable)]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[Parameters].[Base Salary]' />
-      </column>
-      <column caption='% of quota achieved' datatype='real' default-format='p0%' name='[Calculation_0440925131659539]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='AVG([Achievement (copy)])/[Parameters].[New Quota]' scope-isolation='false' />
-      </column>
-      <column caption='Rank over 3' datatype='real' name='[Calculation_4120925132203686]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='ROUND(INDEX() / 3 - 0.6,0) + 1'>
-          <table-calc ordering-type='Rows' />
-        </calculation>
-      </column>
-      <column caption='Sort by field' datatype='real' name='[Calculation_8140925133029303]' role='measure' type='ordinal'>
-        <calculation class='tableau' formula='if [Parameters].[Parameter 1 1]=&quot;Names&quot; then 0&#13;&#10;elseif [Parameters].[Parameter 1 1]=&quot;% quota descending&quot; then -[Calculation_0440925131659539]&#13;&#10;else [Calculation_0440925131659539] end' />
-      </column>
-      <column datatype='real' default-format='C1033%' name='[Commission (Variable)]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='([Parameters].[Commission Rate]*[Sales])/100' scope-isolation='false' />
-      </column>
-      <column datatype='string' name='[Estimate Compensation label]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='&quot;Estimated Compensation:&quot;' />
-        <aliases>
-          <alias key='&quot;Estimated Compensation:&quot;' value='Estimated total compensation' />
-        </aliases>
-      </column>
-      <column datatype='real' default-format='C1033%' name='[OTE (Variable)]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[Parameters].[Base Salary] + ([Parameters].[Commission Rate]*[Parameters].[New Quota])/100' />
-      </column>
-      <column datatype='datetime' name='[Order Date]' role='dimension' type='ordinal' />
-      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
-      <column caption='Sales Person1' datatype='string' name='[Sales Person]' role='dimension' type='nominal' />
-      <column datatype='integer' default-format='n#,##0;-#,##0' name='[Sales]' role='measure' type='quantitative' />
-      <column datatype='real' default-format='C1033%' name='[Total Compensation]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='MIN([Base (Variable)]) + SUM([Commission (Variable)])' />
-      </column>
-      <column datatype='string' name='[Total Sales label]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='&quot;Total Sales:&quot;' />
-        <aliases>
-          <alias key='&quot;Total Sales:&quot;' value='Total' />
-        </aliases>
-      </column>
-      <column-instance column='[Base (Variable)]' derivation='Min' name='[min:Base (Variable):qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Order Date]' derivation='Month' name='[mn:Order Date:ok]' pivot='key' type='ordinal' />
-      <column-instance column='[Commission (Variable)]' derivation='Sum' name='[sum:Commission (Variable):qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:ok]' pivot='key' type='ordinal' />
-      <column-instance column='[Order Date]' derivation='Week-Trunc' name='[twk:Order Date:ok]' pivot='key' type='ordinal' />
-      <column-instance column='[Achievement (variable) (copy)]' derivation='User' name='[usr:Achievement (variable) (copy):nk]' pivot='key' type='nominal' />
-      <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
-      <group hidden='true' name='[Action (Call Center)]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[Region]' />
-        </groupfilter>
-      </group>
-      <group caption='Action (MONTH(Order Date))' hidden='true' name='[Action (MONTH(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[tmn:Order Date:ok]' />
-        </groupfilter>
-      </group>
-      <group caption='Action (Next Button)' hidden='true' name='[Action (Next Button)]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[Calculation_2310128142449424]' />
-        </groupfilter>
-      </group>
-      <group caption='Action (Previous Button)' hidden='true' name='[Action (Previous Button)]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[Next (copy)]' />
-        </groupfilter>
-      </group>
-      <group caption='Action (YEAR(Order Date),MONTH(Order Date))' hidden='true' name='[Action (YEAR(Order Date),MONTH(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[yr:Order Date:ok]' />
-          <groupfilter function='level-members' level='[mn:Order Date:ok]' />
-        </groupfilter>
-      </group>
-      <group caption='Action (YEAR(Order Date),WEEK(Order Date))' hidden='true' name='[Action (YEAR(Order Date),WEEK(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
-        <groupfilter function='crossjoin'>
-          <groupfilter function='level-members' level='[yr:Order Date:ok]' />
-          <groupfilter function='level-members' level='[twk:Order Date:ok]' />
-        </groupfilter>
-      </group>
-      <layout dim-ordering='alphabetic' dim-percentage='0.365904' measure-ordering='alphabetic' measure-percentage='0.378378' parameter-percentage='0.255717' show-structure='true' user-set-layout='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[:Measure Names]' type='palette'>
-            <map to='#5f9ed1'>
-              <bucket>&quot;[Sales Planning new].[sum:Commission (Variable):qk]&quot;</bucket>
-            </map>
-            <map to='#898989'>
-              <bucket>&quot;[Sales Planning new].[min:Base (Variable):qk]&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[usr:Achievement (variable) (copy):nk]' palette='tableau10_10_0' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;50-75\%&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;Below 50\%&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;100\% +&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;75-100\%&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <datasource-dependencies datasource='Parameters'>
-        <column caption='Base Salary' datatype='integer' name='[Base Salary]' param-domain-type='range' role='measure' type='quantitative' value='50000'>
-          <calculation class='tableau' formula='50000' />
-          <range granularity='1000' min='0' />
-        </column>
-        <column caption='Commission Rate' datatype='real' default-format='n#,##0.0&quot;%&quot;;-#,##0.0&quot;%&quot;' name='[Commission Rate]' param-domain-type='range' role='measure' type='quantitative' value='18.400000000000002'>
-          <calculation class='tableau' formula='18.400000000000002' />
-          <range granularity='0.10000000000000001' max='100.0' min='1.0' />
-        </column>
-        <column caption='New Quota' datatype='integer' default-format='c&quot;$&quot;#,##0,K;(&quot;$&quot;#,##0,K)' name='[New Quota]' param-domain-type='range' role='measure' type='quantitative' value='500000'>
-          <calculation class='tableau' formula='500000' />
-          <range granularity='25000' min='100000' />
-        </column>
-        <column caption='Sort by' datatype='string' name='[Parameter 1 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Names&quot;'>
-          <calculation class='tableau' formula='&quot;Names&quot;' />
-        </column>
-      </datasource-dependencies>
-    </datasource>
     <datasource caption='Sample - Superstore' inline='true' name='dataengine.42019.618651678240' version='18.1'>
       <connection class='federated'>
         <named-connections>
           <named-connection caption='Sample - Superstore' name='dataengine.42019.618651678240leaf'>
-            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Desktop/Sample - Superstore.hyper' default-settings='yes' port='' sslmode='' username='tableau_internal_user'>
+            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Desktop/Sample - Superstore.hyper' default-settings='yes' port='' sslmode='' username='tableau_internal_user' workgroup-auth-mode='as-is'>
               <calculations>
                 <calculation column='[Number of Records]' formula='1' />
               </calculations>
@@ -984,6 +718,272 @@
       <datasource-dependencies datasource='federated.0z0pi331stuxay1ce6y5f1yxvsw9'>
         <column datatype='integer' name='[Sales Target]' role='measure' type='quantitative' />
       </datasource-dependencies>
+    </datasource>
+    <datasource caption='Sales Commission' inline='true' name='Sales Planning new' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Sales Commission' name='Sales Planning newleaf'>
+            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Superstore/Sales Commission.hyper' default-settings='yes' sslmode='' username='tableau_internal_user' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='Sales Planning newleaf' name='Extract' table='[Extract].[Extract]' type='table' />
+        <calculations>
+          <calculation column='[Number of Records]' formula='1' />
+        </calculations>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Order Date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Order Date]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Order Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales Person</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sales Person]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Sales Person</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>41</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Sales</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>43</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Achievement (estimated)' datatype='integer' default-format='C1033%' name='[Achievement (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Sales]' scope-isolation='false' />
+      </column>
+      <column caption='Achieved Quota' datatype='string' name='[Achievement (variable) (copy)]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='if SUM([Achievement (copy)]) &gt;= [Parameters].[New Quota] then &quot;100% +&quot;&#13;&#10;elseif SUM([Achievement (copy)]) &gt;= 0.75 * [Parameters].[New Quota] then &quot;75-100%&quot;&#13;&#10;elseif SUM([Achievement (copy)]) &gt;= 0.5 * [Parameters].[New Quota] then &quot;50-75%&quot;&#13;&#10;else &quot;Below 50%&quot; end' />
+      </column>
+      <column datatype='integer' default-format='C1033%' name='[Base (Variable)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Parameters].[Base Salary]' />
+      </column>
+      <column caption='% of quota achieved' datatype='real' default-format='p0%' name='[Calculation_0440925131659539]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([Achievement (copy)])/[Parameters].[New Quota]' scope-isolation='false' />
+      </column>
+      <column caption='Rank over 3' datatype='real' name='[Calculation_4120925132203686]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ROUND(INDEX() / 3 - 0.6,0) + 1'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='Sort by field' datatype='real' name='[Calculation_8140925133029303]' role='measure' type='ordinal'>
+        <calculation class='tableau' formula='if [Parameters].[Parameter 1 1]=&quot;Names&quot; then 0&#13;&#10;elseif [Parameters].[Parameter 1 1]=&quot;% quota descending&quot; then -[Calculation_0440925131659539]&#13;&#10;else [Calculation_0440925131659539] end' />
+      </column>
+      <column datatype='real' default-format='C1033%' name='[Commission (Variable)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='([Parameters].[Commission Rate]*[Sales])/100' scope-isolation='false' />
+      </column>
+      <column datatype='string' name='[Estimate Compensation label]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;Estimated Compensation:&quot;' />
+        <aliases>
+          <alias key='&quot;Estimated Compensation:&quot;' value='Estimated total compensation' />
+        </aliases>
+      </column>
+      <column datatype='real' default-format='C1033%' name='[OTE (Variable)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Parameters].[Base Salary] + ([Parameters].[Commission Rate]*[Parameters].[New Quota])/100' />
+      </column>
+      <column datatype='datetime' name='[Order Date]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Region]' role='dimension' type='nominal' />
+      <column caption='Sales Person1' datatype='string' name='[Sales Person]' role='dimension' type='nominal' />
+      <column datatype='integer' default-format='n#,##0;-#,##0' name='[Sales]' role='measure' type='quantitative' />
+      <column datatype='real' default-format='C1033%' name='[Total Compensation]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MIN([Base (Variable)]) + SUM([Commission (Variable)])' />
+      </column>
+      <column datatype='string' name='[Total Sales label]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='&quot;Total Sales:&quot;' />
+        <aliases>
+          <alias key='&quot;Total Sales:&quot;' value='Total' />
+        </aliases>
+      </column>
+      <column-instance column='[Base (Variable)]' derivation='Min' name='[min:Base (Variable):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Order Date]' derivation='Month' name='[mn:Order Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Commission (Variable)]' derivation='Sum' name='[sum:Commission (Variable):qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Order Date]' derivation='Month-Trunc' name='[tmn:Order Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Order Date]' derivation='Week-Trunc' name='[twk:Order Date:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Achievement (variable) (copy)]' derivation='User' name='[usr:Achievement (variable) (copy):nk]' pivot='key' type='nominal' />
+      <column-instance column='[Order Date]' derivation='Year' name='[yr:Order Date:ok]' pivot='key' type='ordinal' />
+      <group hidden='true' name='[Action (Call Center)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Region]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (MONTH(Order Date))' hidden='true' name='[Action (MONTH(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[tmn:Order Date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Next Button)' hidden='true' name='[Action (Next Button)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_2310128142449424]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Previous Button)' hidden='true' name='[Action (Previous Button)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Next (copy)]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (YEAR(Order Date),MONTH(Order Date))' hidden='true' name='[Action (YEAR(Order Date),MONTH(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:Order Date:ok]' />
+          <groupfilter function='level-members' level='[mn:Order Date:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (YEAR(Order Date),WEEK(Order Date))' hidden='true' name='[Action (YEAR(Order Date),WEEK(Order Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:Order Date:ok]' />
+          <groupfilter function='level-members' level='[twk:Order Date:ok]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' dim-percentage='0.365904' measure-ordering='alphabetic' measure-percentage='0.378378' parameter-percentage='0.255717' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#5f9ed1'>
+              <bucket>&quot;[Sales Planning new].[sum:Commission (Variable):qk]&quot;</bucket>
+            </map>
+            <map to='#898989'>
+              <bucket>&quot;[Sales Planning new].[min:Base (Variable):qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Achievement (variable) (copy):nk]' palette='tableau10_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;50-75\%&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Below 50\%&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;100\% +&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;75-100\%&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Base Salary' datatype='integer' name='[Base Salary]' param-domain-type='range' role='measure' type='quantitative' value='50000'>
+          <calculation class='tableau' formula='50000' />
+          <range granularity='1000' min='0' />
+        </column>
+        <column caption='Commission Rate' datatype='real' default-format='n#,##0.0&quot;%&quot;;-#,##0.0&quot;%&quot;' name='[Commission Rate]' param-domain-type='range' role='measure' type='quantitative' value='18.400000000000002'>
+          <calculation class='tableau' formula='18.400000000000002' />
+          <range granularity='0.10000000000000001' max='100.0' min='1.0' />
+        </column>
+        <column caption='New Quota' datatype='integer' default-format='c&quot;$&quot;#,##0,K;(&quot;$&quot;#,##0,K)' name='[New Quota]' param-domain-type='range' role='measure' type='quantitative' value='500000'>
+          <calculation class='tableau' formula='500000' />
+          <range granularity='25000' min='100000' />
+        </column>
+        <column caption='Sort by' datatype='string' name='[Parameter 1 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Names&quot;'>
+          <calculation class='tableau' formula='&quot;Names&quot;' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+    <datasource caption='Sales Target Extract' inline='true' name='federated.0z0pi331stuxay1ce6y5f1yxvsw9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Sales Target' name='hyper.0b9ww9a086u1d41dqjy2d0vs8f1i'>
+            <connection authentication='auth-none' author-locale='en_US' class='hyper' dbname='Data/Desktop 1/Sales Target.hyper' default-settings='yes' sslmode='' username='tableau_internal_user' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='hyper.0b9ww9a086u1d41dqjy2d0vs8f1i' name='Extract' table='[Extract].[Extract]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Order Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Order Date]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Order Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <approx-count>1200</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sales Target</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Sales Target]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Sales Target</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1065</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Segment]</local-name>
+            <parent-name>[Extract]</parent-name>
+            <remote-alias>Segment</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>3</approx-count>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.324468' measure-ordering='alphabetic' measure-percentage='0.293883' parameter-percentage='0.381649' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
     </datasource>
   </datasources>
   <datasource-relationships>
@@ -3056,10 +3056,6 @@
           <aggregation value='true' />
         </view>
         <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[dataengine.42019.618651678240].[Longitude (generated)]' field-type='quantitative' max='-7735187.3439237457' min='-9177804.9162550848' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[dataengine.42019.618651678240].[Latitude (generated)]' field-type='quantitative' max='5659747.357216632' min='5092386.9690575451' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
-          </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[dataengine.42019.618651678240].[usr:Calculation_9921103144103743:qk]' max='0.5' min='-0.5' num-steps='6' palette='orange_blue_diverging_10_0' type='interpolated' />
           </style-rule>
@@ -3323,7 +3319,7 @@
             </groupfilter>
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[Action (State)]'>
-            <groupfilter function='member' level='[State]' member='&quot;New York&quot;' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='level-members' level='[State]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[none:Calculation_9060122104947471:nk]' filter-group='6'>
             <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
@@ -3474,7 +3470,7 @@
             </groupfilter>
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[Action (State)]'>
-            <groupfilter function='member' level='[State]' member='&quot;New York&quot;' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='level-members' level='[State]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[none:Calculation_9060122104947471:nk]' filter-group='6'>
             <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
@@ -3889,7 +3885,7 @@
             <column-instance column='[Calculation_9921103144103743]' derivation='User' name='[usr:Calculation_9921103144103743:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[dataengine.42019.618651678240].[Tooltip (State)]'>
-            <groupfilter function='member' level='[State]' member='&quot;New York&quot;' user:ui-action-filter='[Action - Tooltip: Sales by City]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='member' level='[State]' member='&quot;North Carolina&quot;' user:ui-action-filter='[Action - Tooltip: Sales by City]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <computed-sort column='[dataengine.42019.618651678240].[none:City:nk]' direction='ASC' using='[dataengine.42019.618651678240].[usr:Calculation_9921103144103743:qk]' />
           <slices>
@@ -4060,7 +4056,7 @@
             </groupfilter>
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[Action (State)]'>
-            <groupfilter function='member' level='[State]' member='&quot;New York&quot;' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+            <groupfilter function='level-members' level='[State]' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
           <filter class='categorical' column='[dataengine.42019.618651678240].[none:Region:nk]' filter-group='14'>
             <groupfilter function='level-members' level='[none:Region:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
@@ -5473,7 +5469,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='1' />
+      <active id='32' />
       <device-preview>
         <device is-portrait='false' name='iPhone 6' type='Phone' />
       </device-preview>
